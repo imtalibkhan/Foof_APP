@@ -13,6 +13,14 @@ import "./styles/shipping.scss";
 import "./styles/confirmorder.scss";
 import "./styles/paymnetsuccess.scss";
 import "./styles/login.scss";
+import "./styles/profile.scss";
+import "./styles/table.scss";
+import "./styles/orderDetails.scss";
+import "./styles/dashboard.scss";
+
+
+
+
 
 
 
@@ -26,6 +34,14 @@ import Shipping from "./components/cart/Shipping";
 import Confirmorder from "./components/cart/Confirmorder";
 import PaymentSuccess from "./components/cart/PaymentSuccess";
 import Login from "./components/login/Login";
+import Profile from "./components/profile/Profile";
+import MyOrders from "./components/myorders/MyOrders";
+import OrderDetail from "./components/myorders/OrderDetail";
+import Dashboard from "./components/admin/Dashboard";
+import Users from "./components/admin/Users";
+import Orders from "./components/admin/Orders";
+import NotFound from "./components/layout/NotFound";
+
 
 
 
@@ -47,6 +63,22 @@ function App() {
       <Route path ="/confirmorder" element={<Confirmorder />} />
       <Route path ="/paymentsuccess" element={<PaymentSuccess />} />
       <Route path ="/login" element={<Login />} />
+      <Route path ="/me" element={<Profile />} />
+      <Route path ="/myorders" element={<MyOrders />} />
+      <Route path ="/order/:id" element={<OrderDetail />} />
+      <Route path ="/admin/dashboard" element={<Dashboard />} />
+      <Route path ="/admin/users" element={<Users/>} />
+      <Route path ="/admin/orders" element={<Orders/>} />
+
+
+      <Route path ="*" element={<NotFound/>} />
+
+
+
+
+
+
+
 
 
 

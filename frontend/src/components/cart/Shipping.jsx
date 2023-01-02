@@ -6,7 +6,6 @@ const Shipping = () => {
     <section className="shipping">
       <main>
         <h1>shipping</h1>
-
         <form>
           <div>
             <label htmlFor="">H.No</label>
@@ -19,7 +18,7 @@ const Shipping = () => {
           </div>
 
           <div>
-            <label htmlFor="">Country</label>
+            <label htmlFor="">Countryyyyy</label>
             <select>
               <option value="">Country</option>
               {Country &&
