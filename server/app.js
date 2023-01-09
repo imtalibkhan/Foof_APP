@@ -7,5 +7,8 @@ const app= express();
 export default app;
 
 dotenv.config({
-    path:"./config/config.env"
-})
+    path:"./config/config.env",
+});
+
+
+
