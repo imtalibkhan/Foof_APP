@@ -4,7 +4,7 @@ import {connectDB} from "./config/database.js";
 connectDB();
 
 app.get("/", (req, res, next) => {
-  res.send("<h1>Workingg</h1>");
+  res.send("<h1>Workingggggggg</h1>");
 });
 
 app.listen(process.env.PORT, () =>
