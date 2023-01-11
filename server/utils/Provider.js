@@ -7,26 +7,27 @@ export const connectPassport = () => {
     new GoogleStrategy(
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECTRET,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET_ID,
         callbackURL: process.env.GOOGLE_CALLBACK_URL,
       },
       async function (accessToken, refreshToken, profile, done) {
-        //database came here
-        const user = await User.findOne({
-            googleID: profile.id,
+        //data base here
 
+        const user = await User.findOne({
+          googleId: profile.id,
         });
-        if(!user) {
+
+        if (!user) {
             const newUser = await User.create({
-                googleID:profile.id,
-                name:profile.displayName,
+                googleId: profile.id,
+                name: profile.displayName,
                 photo:profile.photos[0].value,
             });
-            return done(null,newUser);
+            return done(null,newUser)
 
-
-        }else{
-            return done(null,user);
+        }
+        else{
+            return done(null,user)
         }
       }
     )
@@ -35,9 +36,8 @@ export const connectPassport = () => {
   passport.serializeUser((user, done) => {
     done(null, user.id);
   });
-
   passport.deserializeUser(async (id, done) => {
-    // const user= await User.findByID(id);
+    const user = await User.findById(id);
 
     done(null, user);
   });

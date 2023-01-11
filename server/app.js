@@ -1,19 +1,18 @@
-import express from "express";
+import Express from "express";
 import dotenv from "dotenv";
-import { connectPassport } from "./utils/provider.js";
- import passport from "passport";
-
-
+import { connectPassport } from "./utils/Provider.js";
 import session from "express-session";
+import passport from "passport";
+import cookieParser from "cookie-parser";
+import { errorMiddleware } from "./middlewares/errorMiddleware.js";
+// import cookieParser from "cookie-parser";
 
-const app = express();
+
+const app = Express();
 export default app;
 dotenv.config({
   path: "./config/config.env",
 });
-
-
-
 
 //using middlewares
 app.use(
@@ -23,10 +22,7 @@ app.use(
     saveUninitialized: false,
   })
 );
-
-
-
-
+app.use(cookieParser());
 app.use(passport.authenticate("session"));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -38,6 +34,11 @@ connectPassport();
 
 import userRoute from "./routes/user.js";
 
-
-//prefix
+//r-1
 app.use("/api/v1", userRoute);
+
+
+
+
+//using error middlewares
+app.use(errorMiddleware)

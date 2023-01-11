@@ -1,27 +1,24 @@
 import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
-
-    name:String,
-    photo:String,
+    name: String,
+    photo: String,
     googleId: {
         type: String,
         required: true,
-        unique:true,
+        unique: true,
     },
     role: {
-        type:String,
-        enum: ["admin", "user"],
-        default: "user",
+        type: String,
+        enum: ["admin","user"],
+        default:"user",
     },
 
     createdAt: {
         type:Date,
-        default: Date.now
-    }
+        default:Date.now,
+    },
+});
 
 
-})
-
-
-export const User = mongoose.model("User",schema)
+export const User = mongoose.model("User", schema);
