@@ -1,13 +1,16 @@
 import express from "express";
-import { getAdminOrders, getMyorders, getOrderDetails, placeOrder, placeOrderOnline, processOrder } from "../controllers/order.js";
+import { getAdminOrders, getMyorders, getOrderDetails, paymentVerification, placeOrder, placeOrderOnline, processOrder } from "../controllers/order.js";
 import { authorizedAdmin, isAuthenticated } from "../middlewares/auth.js";
 
 
 const router = express.Router();
 
-router.post("/createorder",placeOrder);
+router.post("/createorder",isAuthenticated,placeOrder);
 
-router.post("/createorderonline", placeOrderOnline)
+router.post("/createorderonline",isAuthenticated, placeOrderOnline)
+
+router.post("/paymentverification",isAuthenticated, paymentVerification)
+
 
 router.get("/myorders",isAuthenticated,getMyorders);
 

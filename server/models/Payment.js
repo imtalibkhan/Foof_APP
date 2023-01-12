@@ -10,7 +10,7 @@ const schema = new mongoose.Schema({
         type: String,
         required:true,
 
-    }, razorpay_signature_id: {
+    }, razorpay_signature: {
         type: String,
         required:true,
 
