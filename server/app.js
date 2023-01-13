@@ -22,11 +22,11 @@ app.use(
     resave: false,
     saveUninitialized: false,
 
-    cookie:{
-      secure:process.env.NODE_ENV==="developement"?false: true,
-      httpOnly:process.env.NODE_ENV==="developement"?false: true,
-      sameSite:process.env.NODE_ENV==="developement"?false : "none",
-    }
+    // cookie:{
+    //   secure:process.env.NODE_ENV==="developement"?false: true,
+    //   httpOnly:process.env.NODE_ENV==="developement"?false: true,
+    //   sameSite:process.env.NODE_ENV==="developement"?false : "none",
+    // }
   })
 );
 app.use(cookieParser());
