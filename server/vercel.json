@@ -1,7 +1,0 @@
-{
-"version": 2,
-"name": "server",
-"builds":[{"src": "SET NODE_ENV=production & node server.js","use":"@vercel/node"}],
-
-"routes":[{"src": "/(.*)", "dest": "serverr.js"}]
-}

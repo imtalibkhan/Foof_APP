@@ -9,7 +9,7 @@ export const isAuthenticated = (req, res, next) => {
     // return res.status(400).json({
 
     // })
-    return next(new ErrorHandler("Not Logged In, 401"));
+    return next(new ErrorHandler("Not Logged In, 401",401));
   }
   next();
 };
