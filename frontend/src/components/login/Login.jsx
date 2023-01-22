@@ -1,16 +1,23 @@
-import React from 'react'
-import {FcGoogle} from "react-icons/fc";
+import React from "react";
+import { FcGoogle } from "react-icons/fc";
+import { server } from "../../redux/store";
 
 const Login = () => {
-  return (<section className='login'>
 
-    <button>
+    const loginHandler=()=> {
+      window.open(`${server}/googlelogin`,"_self");
+    }
+
+  return (
+    <section className="login">
+      <button onClick={
+        loginHandler
+      }>
         login with google
         <FcGoogle />
-    </button>
+      </button>
+    </section>
+  );
+};
 
-  </section>
-  )
-}
-
-export default Login
+export default Login;
