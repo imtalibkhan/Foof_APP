@@ -22,11 +22,11 @@ app.use(
     resave: false,
     saveUninitialized: false,
 
-    cookie:{
-      secure:process.env.NODE_ENV==="developement"?false: true,
-      httpOnly:process.env.NODE_ENV==="developement"?false: true,
-      sameSite:process.env.NODE_ENV==="developement"?false : "none",
-    }
+    // cookie:{
+    //   secure:process.env.NODE_ENV==="developement"? false: true,
+    //   httpOnly:process.env.NODE_ENV==="developement"? false: true,
+    //   sameSite:process.env.NODE_ENV==="developement"? false : "none",
+    // }
   })
 );
 app.use(cookieParser());
@@ -49,7 +49,7 @@ app.use(
 app.use(passport.authenticate("session"));
 app.use(passport.initialize());
 app.use(passport.session());
-app.enable("trust proxy");
+// app.enable("trust proxy");
 
 connectPassport();
 

@@ -35,7 +35,7 @@ import NotFound from "./components/layout/NotFound";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadUser } from "./redux/actions/user";
-import toast, { Toaster } from "react-hot-toast";
+import toast,{ Toaster } from "react-hot-toast";
 
 function App() {
   const dispatch = useDispatch();
